@@ -31,3 +31,39 @@ SELECT * FROM Employees;
 
 DROP TABLE Employees;
 
+#For this next table I had to run each of the previous tables I created in order for my reference clauses to work and for the successful query to take place. 
+#For clarification I did not have to execute the select * from statements because I did not need to see that tables individually again. 
+
+#Below is now the SQL code for my Dept_emp table that I created
+
+CREATE TABLE Dept_emp (
+    emp_no INT NOT NULL,
+    dept_no VARCHAR NOT NULL,
+    from_date DATE NOT NULL,
+    to_date DATE NOT NULL,
+    FOREIGN KEY (emp_no)  REFERENCES Employees   (emp_no) ,
+    FOREIGN KEY (dept_no) REFERENCES departments (dept_no),
+    PRIMARY KEY (emp_no,dept_no)
+);
+
+SELECT * FROM Dept_emp;
+
+#Before creating my Dept_manager table I need to drop the previous table 
+
+DROP TABLE Dept_emp;
+
+#Code for Dept_manager table that I created 
+
+CREATE TABLE Dept_manager (
+   dept_no VARCHAR NOT NULL,
+   emp_no INT NOT NULL,
+   from_date DATE NOT NULL,
+   to_date DATE NOT NULL,
+   FOREIGN KEY (emp_no)  REFERENCES employees (emp_no),
+   FOREIGN KEY (dept_no) REFERENCES departments (dept_no),
+   PRIMARY KEY (emp_no,dept_no)
+); 
+
+SELECT * FROM Dept_manager; 
+
+#Having learned from my preivous steps, I did not have to rerun each of the previous tables because each of my PK/EK and reference objects were actived
