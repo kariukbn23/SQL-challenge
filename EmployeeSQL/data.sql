@@ -66,4 +66,36 @@ CREATE TABLE Dept_manager (
 
 SELECT * FROM Dept_manager; 
 
-#Having learned from my preivous steps, I did not have to rerun each of the previous tables because each of my PK/EK and reference objects were actived
+#Having learned from my preivous steps, I did not have to rerun each of the previous tables because each of my PK/EK and reference objects were actived. 
+
+# The code for my last two tables can be found below. Nothing out of the ordinary here. Column data types mirror those used for our previous tables. The only thing that varies are which values are tagged as PKs becuase of the table it linked/related to. 
+
+CREATE TABLE Salaries (
+    emp_no      INT  NOT NULL,
+    salary      INT  NOT NULL,
+    from_date   DATE NOT NULL,
+    to_date     DATE NOT NULL,
+    FOREIGN KEY (emp_no) REFERENCES Employees (emp_no),
+    PRIMARY KEY (emp_no, from_date)
+) ;
+
+SELECT * FROM Salaries; 
+
+#Dropped salaries table prior to creating titles table 
+
+DROP TABLE Salaries; 
+
+#Code for final table 
+
+CREATE TABLE Titles (
+    emp_no      INT NOT NULL,
+    title       VARCHAR NOT NULL,
+    from_date   DATE NOT NULL,
+    to_date     DATE NOT NULL,
+    FOREIGN KEY (emp_no) REFERENCES Employees (emp_no),
+    PRIMARY KEY (emp_no,title, from_date)
+); 
+
+SELECT * FROM Titles;
+
+DROP TABLE Titles; 
