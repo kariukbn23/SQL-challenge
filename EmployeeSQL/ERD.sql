@@ -1,3 +1,8 @@
+# Title of each flat file is separated from column id values 
+# By looking at the individual csv files I was able to distinguish between which variable types I would need for each column data source. 
+# The annotations to link the PK with the FK for each tables is what I sourced from our notes from class 
+# The individual column titles were pulled directly from what was available in the provided csv files 
+
 Departments
 -
 dept_no VARCHAR PK
