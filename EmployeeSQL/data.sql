@@ -99,3 +99,18 @@ CREATE TABLE Titles (
 SELECT * FROM Titles;
 
 DROP TABLE Titles; 
+
+#Below are the statements that I used to make the data appear in the tables that I created. I had to hard code this statement because when I attempted to do the import/export data and then view data commands on postAdmin 4 it did not work. So I found this alternative method to link a csv on my computer to the database I created on the server. I removed my invidual server binary path from the the beginning of my file path notations for privacy reasons. However I was able to find that by going to preferences-->paths-->binary paths-->postgresSQL binary path
+
+COPY departments FROM '/Users/kariukbn23/Desktop/SQL_challenge/SQL-challenge/Resources/data/departments.csv' WITH (FORMAT CSV, HEADER); 
+
+COPY dept_emp FROM '/Users/kariukbn23/Desktop/SQL_challenge/SQL-challenge/Resources/data/dept_emp.csv' WITH (FORMAT CSV, HEADER); 
+
+COPY employees FROM '/Users/kariukbn23/Desktop/SQL_challenge/SQL-challenge/Resources/data/employees.csv' WITH (FORMAT CSV, HEADER); 
+
+COPY dept_manager FROM '/Users/kariukbn23/Desktop/SQL_challenge/SQL-challenge/Resources/data/dept_manager.csv' WITH (FORMAT CSV, HEADER); 
+
+COPY salaries FROM '/Users/kariukbn23/Desktop/SQL_challenge/SQL-challenge/Resources/data/salaries.csv' WITH (FORMAT CSV, HEADER);
+
+COPY titles FROM '/Users/kariukbn23/Desktop/SQL_challenge/SQL-challenge/Resources/data/titles.csv' WITH (FORMAT CSV, HEADER);
+
